@@ -23,7 +23,7 @@ export default function ProductTable() {
 
     const categories = Array.from(new Set(products.map((p) => p.category)))
 
-    let filtered = products
+    const filtered = products
         .filter(
             (p) =>
                 p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
