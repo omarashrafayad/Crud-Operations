@@ -69,18 +69,20 @@ export default function ProductTable() {
 
     return (
         <div className="max-w-6xl mx-auto mt-10">
-            <input
-                type="text"
-                placeholder="Search by title or category..."
-                className="w-full p-2 mb-4 rounded bg-gray-700 text-white"
-                value={searchTerm}
-                onChange={(e) => {
-                    setSearchTerm(e.target.value)
-                    setCurrentPage(1)
-                }}
-            />
+        {products.length > 0 && (
+    <input
+      type="text"
+      placeholder="Search by title or category..."
+      className="w-full p-2 mb-4 rounded bg-gray-700 text-white"
+      value={searchTerm}
+      onChange={(e) => {
+        setSearchTerm(e.target.value)
+        setCurrentPage(1)
+      }}
+    />
+  )}
             {filtered.length > 0 ? (
-                <>
+              <>
                     <div className="flex justify-between items-center mb-4 flex-wrap gap-3">
                         {/* Export & Delete */}
                         <div className="flex gap-2">
@@ -137,8 +139,6 @@ export default function ProductTable() {
                             </button>
                         </div>
                     </div>
-
-                    {/* Table */}
                     {/* Table Wrapper for mobile */}
 <div className="hidden sm:block overflow-x-auto">
   {/* Table for tablet and desktop */}
